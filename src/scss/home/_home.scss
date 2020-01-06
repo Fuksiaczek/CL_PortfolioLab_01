@@ -6,27 +6,29 @@
   display: flex;
   width: 100%;
   height: 800px;
+  position: relative;
 
   .main-background
   {
     //position: relative;
     display: flex;
     height: inherit;
-    flex: 2 1 0;
-    background: url("../../assets/Home-Hero-Image.jpg") no-repeat right/cover;
+    width: 40%;
+    //background: url("../../assets/Home-Hero-Image.jpg") no-repeat right/cover;
   }
 
-  //.help-start-background::before
-  //{
-  //  content: "";
-  //  display: flex;
-  //  background: url("../../assets/Home-Hero-Image.jpg") no-repeat right/cover;
-  //  //background-position: bottom left;
-  //  position: absolute;
-  //  height: 100%;
-  //  width: 100%;
-  //
-  //}
+  .main-background::after
+  {
+    content: "";
+    display: flex;
+    height: 115%;
+    width: 87%;
+    background: url("../../assets/Home-Hero-Image.jpg") no-repeat bottom/cover;
+    position: absolute;
+    bottom: 0;
+    right: 60%;
+
+  }
 
   .main-info
   {
@@ -35,7 +37,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    flex: 3 1 0;
+    width: 60%;
+    padding: 80px;
 
     .main-info-text
     {
@@ -44,6 +47,7 @@
       align-items: center;
       flex-direction: column;
       text-align: center;
+      letter-spacing: -0.76px;
     }
 
     .main-info-img

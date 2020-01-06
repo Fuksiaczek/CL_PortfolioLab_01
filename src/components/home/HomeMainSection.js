@@ -13,9 +13,7 @@ class HomeMainSection extends Component
                 <section className="section-main">
                     <div className="container">
                         <div className="main">
-                            <div className="main-background">
-
-                            </div>
+                            <div className="main-background"/>
                             <div className="main-info">
                                 <div className="main-info-text">
                                     <h2>Zacznij pomagać!</h2>
