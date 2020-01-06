@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
-import '../App.css';
+import '../../App.css';
 
 
-class HomeHeader extends Component
+class HomeThreeColumns extends Component
 {
     render() {
         return (
             <>
-                <p>HomeHeader</p>
+
             </>
         )
     }
 }
 
-export default HomeHeader;
+export default HomeThreeColumns;
