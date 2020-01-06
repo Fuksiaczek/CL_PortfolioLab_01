@@ -13,10 +13,6 @@
   height: 100vh;
   display: flex;
   position: absolute;
-  /*background: url("../../assets/Home-Hero-Image.jpg") no-repeat;
-  background-position: -480px bottom;*/
-
-
 }
 
 .nav
@@ -35,7 +31,6 @@
     {
       color: $color-font;
     }
-
   }
 }
 
@@ -74,6 +69,7 @@
     {
       padding: 9px 20px;
     }
+
     a:hover
     {
       border: 1px solid $color-font;
