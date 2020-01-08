@@ -2,7 +2,7 @@
 
 ## Start helping Application
 
-An application that helps users give their old things into good hands -> organizations and foundations that helps others
+An application that helps users give their old things into good hands like organizations and foundations that helps others
 
 ### Technologies:
 
@@ -14,10 +14,9 @@ An application that helps users give their old things into good hands -> organiz
 
 ### Installation:
 
-clone the repository
+- #### clone the repository
   `git clone https://github.com/mfuks/Start_helping_App.git`
-install all dependencies
+- #### install all dependencies
   `npm install`
-preview
-  `npm start` 
-  go to http://localhost:3000/ 
+- #### preview
+  `npm start` and go to [http://localhost:3000/](http://localhost:3000/)
