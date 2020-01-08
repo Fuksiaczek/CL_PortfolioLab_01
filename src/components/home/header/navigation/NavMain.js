@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
-import '../../App.css';
+import './_navigation.scss';
 
-import {
-    Link
-
-} from 'react-scroll';
+import {Link} from 'react-scroll';
 
 class NavMain extends Component
 {
@@ -18,7 +15,7 @@ class NavMain extends Component
                                 <Link to="main">Start</Link>
                             </li>
                             <li>
-                                <Link to="/">O co chodzi?</Link>
+                                <Link to="three-columns">O co chodzi?</Link>
                             </li>
                             <li>
                                 <Link to="/">O nas</Link>

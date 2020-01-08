@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import '../../App.css';
+import './_header.scss';
 
 import NavMain from '../navigation/NavMain';
 import NavLogRegist from '../navigation/NavLogRegist';
 
-class HomeHeader extends Component
+class Header extends Component
 {
     render() {
         return (
@@ -18,4 +18,4 @@ class HomeHeader extends Component
     }
 }
 
-export default HomeHeader;
+export default Header;

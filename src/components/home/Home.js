@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import '../../App.css';
 
 
-import HomeHeader from './HomeHeader';
-import HomeThreeColumns from './HomeThreeColumns';
-import HomeMainSection from './HomeMainSection';
+import Header from './header/header/Header';
+import ThreeColumns from './three_columns/ThreeColumns';
+import MainSection from './main_section/MainSection';
 
 
 
@@ -13,9 +13,9 @@ class Home extends Component
     render() {
         return (
             <>
-                <HomeHeader/>
-                <HomeMainSection  name="main"/>
-                <HomeThreeColumns/>
+                <Header/>
+                <MainSection name="main"/>
+                <ThreeColumns name="three-columns"/>
             </>
         )
     }

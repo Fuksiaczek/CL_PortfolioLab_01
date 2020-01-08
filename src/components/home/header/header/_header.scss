@@ -1,0 +1,16 @@
+@import "../../../../scss_main_settings/colors";
+@import "../../../../scss_main_settings/fonts";
+
+.header
+{
+  position: relative;
+}
+
+.header::before
+{
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+}

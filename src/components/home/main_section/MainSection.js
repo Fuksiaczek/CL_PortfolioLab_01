@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import '../../App.css';
+import './_main_section.scss';
 
 import {Link} from "react-router-dom";
 
 
 
-class HomeMainSection extends Component
+class MainSection extends Component
 {
     render() {
         return (
@@ -33,4 +33,4 @@ class HomeMainSection extends Component
     }
 }
 
-export default HomeMainSection;
+export default MainSection;
