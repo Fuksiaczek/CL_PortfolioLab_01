@@ -18,7 +18,7 @@ class NavMain extends Component
                                 <Link to="three-columns">O co chodzi?</Link>
                             </li>
                             <li>
-                                <Link to="/">O nas</Link>
+                                <Link to="four-steps">O nas</Link>
                             </li>
                             <li>
                                 <Link to="/">Fundacja i organizacje</Link>
