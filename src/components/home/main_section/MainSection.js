@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './_main_section.scss';
 
 import {Link} from "react-router-dom";
+import Decorator from "../decorator/Decorator";
 
 
 
@@ -19,7 +20,7 @@ class MainSection extends Component
                                     <h2>Zacznij pomagać!</h2>
                                     <h2>Oddaj niechciane rzeczy w zaufane ręce</h2>
                                 </div>
-                                <div className="main-info-img"/>
+                                <Decorator/>
                                 <div className="main-info-btns">
                                     <Link to="/login" className="main-info-btn btn">ODDAJ RZECZY</Link>
                                     <Link to="/login" className="main-info-btn btn">ZORGANIZUJ ZBIÓRKĘ</Link>

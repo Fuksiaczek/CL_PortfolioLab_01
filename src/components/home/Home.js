@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import '../../App.css';
 
 
 import Header from './header/header/Header';
 import ThreeColumns from './three_columns/ThreeColumns';
 import MainSection from './main_section/MainSection';
+import FourSteps from "./four_steps/FourSteps";
 
 
 
@@ -16,6 +16,7 @@ class Home extends Component
                 <Header/>
                 <MainSection name="main"/>
                 <ThreeColumns name="three-columns"/>
+                <FourSteps name="four-steps"/>
             </>
         )
     }
