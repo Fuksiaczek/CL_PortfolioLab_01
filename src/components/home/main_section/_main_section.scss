@@ -1,11 +1,11 @@
-@import "../settings/colors";
-@import "../settings/fonts";
+@import "../../../scss_main_settings/colors";
+@import "../../../scss_main_settings/fonts";
 
 .main
 {
   display: flex;
   width: 100%;
-  height: 800px;
+  height: 90vh;
   position: relative;
 
   .main-background
@@ -21,7 +21,7 @@
     display: flex;
     height: 115%;
     width: 87%;
-    background: url("../../assets/Home-Hero-Image.jpg") no-repeat bottom/cover;
+    background: url("/assets/Home-Hero-Image.jpg") no-repeat bottom/cover;
     position: absolute;
     bottom: 0;
     right: 60%;
@@ -53,7 +53,7 @@
       margin: 0.5rem 0 4rem 0;
       height: 2.4rem;
       width: 18rem;
-      background: url("../../assets/Decoration.svg") no-repeat center/cover;
+      background: url("/assets/Decoration.svg") no-repeat center/cover;
     }
   }
 }
