@@ -1,24 +1,28 @@
 import React, {Component} from 'react';
 import './_navigation.scss';
 
-import {Link} from 'react-scroll';
+import * as Scroll from 'react-scroll';
+import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+
+
 
 class NavMain extends Component
 {
-    render() {
+
+render() {
         return (
             <>
                 <div className="container">
                     <nav className="nav-main nav">
                         <ul>
                             <li>
-                                <Link to="main">Start</Link>
+                                <Link activeClass="active" to="main">Start</Link>
                             </li>
                             <li>
-                                <Link to="three-columns">O co chodzi?</Link>
+                                <Link activeClass="active" to="four_steps">O co chodzi?</Link>
                             </li>
                             <li>
-                                <Link to="four-steps">O nas</Link>
+                                <Link to="about_us">O nas</Link>
                             </li>
                             <li>
                                 <Link to="/">Fundacja i organizacje</Link>

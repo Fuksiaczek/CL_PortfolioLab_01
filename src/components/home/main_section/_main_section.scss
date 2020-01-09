@@ -1,5 +1,4 @@
-@import "../../../scss_main_settings/colors";
-@import "../../../scss_main_settings/fonts";
+@import "../../../main";
 
 .main
 {
@@ -58,12 +57,4 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  .main-info-btn
-  {
-    padding: 0 50px;
-    font-size: 2.5rem;
-    display: flex;
-    align-items: center;
-  }
 }
