@@ -15,11 +15,11 @@ class Home extends Component
     render() {
         return (
             <>
-                <Header />
-                <MainSection name="main"/>
+                <Header/>
+                <MainSection/>
                 <ThreeColumns/>
-                <FourSteps name="four_steps"/>
-                <AboutUs name="about_us"/>
+                <FourSteps/>
+                <AboutUs/>
             </>
         )
     }

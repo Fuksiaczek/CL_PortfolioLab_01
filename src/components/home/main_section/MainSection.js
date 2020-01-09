@@ -11,7 +11,7 @@ class MainSection extends Component
     render() {
         return (
             <>
-                <section className="section-main">
+                <section className="section-main" id="scroll-main">
                     <div className="container">
                         <div className="main">
                             <div className="main-background"/>

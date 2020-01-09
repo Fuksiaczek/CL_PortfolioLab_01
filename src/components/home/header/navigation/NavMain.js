@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import './_navigation.scss';
 
-import * as Scroll from 'react-scroll';
-import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { Link} from 'react-scroll'
 
 
 
@@ -16,19 +15,35 @@ render() {
                     <nav className="nav-main nav">
                         <ul>
                             <li>
-                                <Link activeClass="active" to="main">Start</Link>
+                                <Link
+                                    activeClass="active"
+                                    to="scroll-main"
+                                    smooth={true}
+                                    duration={500}
+                                    delay={100}>Start</Link>
                             </li>
                             <li>
-                                <Link activeClass="active" to="four_steps">O co chodzi?</Link>
+                                <Link
+                                    activeClass="active"
+                                    to="scroll-four-steps"
+                                    smooth={true}
+                                    duration={500}
+                                    delay={100}
+                                    offset={-100}>O co chodzi?</Link>
                             </li>
                             <li>
-                                <Link to="about_us">O nas</Link>
+                                <Link
+                                    activeClass="active"
+                                    to="scroll-about-us"
+                                    smooth={true}
+                                    duration={500}
+                                    delay={100}>O nas</Link>
                             </li>
                             <li>
-                                <Link to="/">Fundacja i organizacje</Link>
+                                <Link to="">Fundacja i organizacje</Link>
                             </li>
                             <li>
-                                <Link to="/">Kontakt</Link>
+                                <Link to="">Kontakt</Link>
                             </li>
                         </ul>
                     </nav>
