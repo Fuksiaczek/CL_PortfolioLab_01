@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './_four_steps_header.scss';
-import Decorator from "../../decorator/Decorator";
+import Decorator from "../../../decorator/Decorator";
 
 
 class FourStepsHeader extends Component
