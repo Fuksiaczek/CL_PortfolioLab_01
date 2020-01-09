@@ -14,7 +14,7 @@ class Home extends Component
     render() {
         return (
             <>
-                <section className="section-four-steps">
+                <section className="section-four-steps" id="scroll-four-steps">
                     <FourStepsHeader/>
                     <FourStepsMain/>
                     <FourStepsLast/>

@@ -8,7 +8,7 @@ class AboutUs extends Component
     render() {
         return (
             <>
-                <section className="section-about-us">
+                <section className="section-about-us" id="scroll-about-us">
                     <div className="about-us">
                         <div className="about-us-info">
                             <h2>O nas</h2>
