@@ -6,10 +6,7 @@ import FourStepsHeader from "./four_steps_header/FourStepsHeader";
 import FourStepsMain from "./four_steps_main/FourStepsMain";
 import FourStepsLast from "./four_steps_last/FourStepsLast";
 
-
-
-
-class Home extends Component
+class FourSteps extends Component
 {
     render() {
         return (
@@ -24,4 +21,4 @@ class Home extends Component
     }
 }
 
-export default Home;
+export default FourSteps;

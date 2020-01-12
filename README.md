@@ -2,12 +2,13 @@
 
 ## Start helping Application
 
-An application that helps users give their old things into good hands like organizations and foundations that helps others
+An application that helps users give their old things back into good hands like organizations and foundations that help others.
 
 ### Technologies:
 
 - HTML5
 - Sass
+- JavaScript
 - React
 - React Router
 - React Scroll
