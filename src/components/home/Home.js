@@ -6,6 +6,7 @@ import ThreeColumns from './three_columns/ThreeColumns';
 import MainSection from './main_section/MainSection';
 import FourSteps from "./four_steps/FourSteps";
 import AboutUs from "./about_us/AboutUs";
+import WhoWeHelp from "./who_we_help/WhoWeHelp";
 
 
 
@@ -20,6 +21,7 @@ class Home extends Component
                 <ThreeColumns/>
                 <FourSteps/>
                 <AboutUs/>
+                <WhoWeHelp/>
             </>
         )
     }

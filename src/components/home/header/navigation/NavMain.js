@@ -40,7 +40,12 @@ render() {
                                     delay={100}>O nas</Link>
                             </li>
                             <li>
-                                <Link to="">Fundacja i organizacje</Link>
+                                <Link
+                                    activeClass="active"
+                                    to="scroll-who-we-help"
+                                    smooth={true}
+                                    duration={500}
+                                    delay={100}>Fundacja i organizacje</Link>
                             </li>
                             <li>
                                 <Link to="">Kontakt</Link>

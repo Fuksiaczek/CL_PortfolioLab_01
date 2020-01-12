@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './_four_steps_header.scss';
 import Decorator from "../../../decorator/Decorator";
+import {Link} from "react-scroll";
 
 
 class FourStepsHeader extends Component

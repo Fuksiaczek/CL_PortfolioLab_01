@@ -1,0 +1,83 @@
+@import "../../../../main";
+
+.who-we-help-informations-list
+{
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .list-main-info
+  {
+
+    width:40%;
+    p
+    {
+      font-family: $font-base;
+      font-weight: 400;
+      font-size: 1.3rem;
+      padding: 60px 0;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 2rem;
+    }
+  }
+
+  .list-text {
+
+    width: 100%;
+
+    .list-text-info {
+      li {
+        font-family: $font-alt;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $color-nav;
+        padding: 30px 0;
+        font-weight: 300;
+
+        p {
+          font-size: 1.3rem;
+        }
+
+        .list-text-main {
+
+          p {
+            font-style: italic;
+            line-height: 2rem;
+          }
+        }
+
+      }
+
+    }
+
+    .list-text-pages {
+      padding: 5px 0;
+      font-size: 1.3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        padding: 20px 15px;
+        cursor: pointer;
+      }
+
+      li:hover {
+        border: 1px solid $color-font;
+      }
+    }
+
+    }
+  }
+
+
+
+
+
