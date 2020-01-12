@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 
 import './_who_we_help_menu.scss';
-import {Link} from "react-router-dom";
 
 class WhoWeHelpMenu extends Component
 {
@@ -11,13 +10,13 @@ class WhoWeHelpMenu extends Component
                 <div className="who-we-help-menu">
                     <ul>
                         <li>
-                            <Link>Fundacjom</Link>
+                            Fundacjom
                         </li>
                         <li>
-                            <Link>Organizacjom pozarządowym</Link>
+                            Organizacjom pozarządowym
                         </li>
                         <li>
-                            <Link>Lokalnym zbiórkom</Link>
+                            Lokalnym zbiórkom
                         </li>
                     </ul>
                 </div>
