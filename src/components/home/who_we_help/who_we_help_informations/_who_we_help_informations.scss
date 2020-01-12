@@ -1,0 +1,28 @@
+@import "../../../../main";
+
+
+.who-we-help-informations
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .who-we-help-informations-text
+  {
+    width: 40%;
+
+    p
+    {
+      font-family: $font-base;
+      font-weight: 400;
+      font-size: 1.3rem;
+      padding: 60px 0;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 2rem;
+    }
+  }
+
+
+}

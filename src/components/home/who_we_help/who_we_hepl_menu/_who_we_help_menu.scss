@@ -1,0 +1,40 @@
+@import "../../../../main";
+
+.who-we-help-menu
+{
+  font-size: 1.3rem;
+  padding: 0 150px;
+
+  ul
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    li
+    {
+
+      padding: 0 40px;
+      a
+      {
+        color: $color-font;
+        padding: 9px 30px;
+        height: 70px;
+        width: 200px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        line-height: 2rem;
+      }
+
+      a:hover
+      {
+        border: 1px solid $color-font;
+        cursor: pointer;
+      }
+    }
+  }
+}
