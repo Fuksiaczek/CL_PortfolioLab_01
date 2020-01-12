@@ -6,6 +6,20 @@ import WhoWeHelpInformations from "./who_we_help_informations/WhoWeHelpInformati
 
 class WhoWeHelp extends Component
 {
+    state =
+        {
+            activeLi: null,
+
+        };
+
+
+    handleClickWhoWeHelp = (e, i) =>
+    {
+        this.setState({
+            activeLi: i
+        })
+    };
+
     render() {
         return (
             <>
@@ -13,8 +27,10 @@ class WhoWeHelp extends Component
                     <div className="container">
                         <div className="who-we-help">
                             <WhoWeHelpHeader/>
-                            <WhoWeHelpMenu/>
-                            <WhoWeHelpInformations/>
+                            <WhoWeHelpMenu
+                                handleClickWhoWeHelp={this.handleClickWhoWeHelp}/>
+                            <WhoWeHelpInformations
+                                activeLi={this.state.activeLi}/>
                         </div>
                     </div>
                 </section>

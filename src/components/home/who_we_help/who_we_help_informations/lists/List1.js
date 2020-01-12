@@ -53,7 +53,8 @@ class WhoWeHelpInformationsList1 extends Component
         });
 
         const pageNumbers = [];
-        for (let i = 1; i <= Math.ceil(info.length/infoPerPage) ; i++)
+        const numerOfPages = Math.ceil(info.length/infoPerPage);
+        for (let i = 1; i <= numerOfPages ; i++)
         {
             const pageNumberElement =
                 <li key={i}
@@ -76,7 +77,7 @@ class WhoWeHelpInformationsList1 extends Component
                             {informations}
                         </ul>
                         <ul className="list-text-pages">
-                            {pageNumbers}
+                            {numerOfPages !== 1 && <>{pageNumbers}</>}
                         </ul>
                     </div>
                 </div>
