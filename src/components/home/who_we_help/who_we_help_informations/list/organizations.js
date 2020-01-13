@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import '../_list.scss';
 
-class WhoWeHelpInformationsList1 extends Component
+class WhoWeHelpInformationsOrganizations extends Component
 {
     state = {
         mainInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt " +
@@ -14,15 +14,10 @@ class WhoWeHelpInformationsList1 extends Component
             ["Organizacja “Lorem Ipsum 4”", "Quis varius quam quisque id diam vel quam elementum pulvinar.", "Egestas, sed, tempus"],
             ["Organizacja “Lorem Ipsum 5”", "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.", "Ut, aliquam, purus, sit, amet"],
             ["Organizacja “Lorem Ipsum 6”", "Scelerisque in dictum non consectetur a erat nam.", "Ut, aliquam, purus, sit, amet"],
-            ["Organizacja “Lorem Ipsum 7”", "Quis varius quam quisque id diam vel quam elementum pulvinar.", "Egestas, sed, tempus"],
-            ["Organizacja “Lorem Ipsum 8”", "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.", "Ut, aliquam, purus, sit, amet"],
-            ["Organizacja “Lorem Ipsum 9”", "Scelerisque in dictum non consectetur a erat nam.", "Ut, aliquam, purus, sit, amet"],
         ],
         currentPage: 1,
         infoPerPage: 3
-
     };
-
 
     handleClick = (e, i) =>
     {
@@ -41,7 +36,7 @@ class WhoWeHelpInformationsList1 extends Component
         const informations = currentInfo.map((element, i) =>
         {
             return (
-                <li key={i}>
+                <li key={"organizations" + i}>
                     <div className="list-text-main">
                         <h3>{element[0]}</h3>
                         <p>{element[1]}</p>
@@ -57,7 +52,7 @@ class WhoWeHelpInformationsList1 extends Component
         for (let i = 1; i <= numerOfPages ; i++)
         {
             const pageNumberElement =
-                <li key={i}
+                <li key={"organizations-pages" + i}
                     onClick={e => this.handleClick(e, i)}>
                         {i}
                 </li>;
@@ -86,4 +81,4 @@ class WhoWeHelpInformationsList1 extends Component
     }
 }
 
-export default WhoWeHelpInformationsList1;
+export default WhoWeHelpInformationsOrganizations;

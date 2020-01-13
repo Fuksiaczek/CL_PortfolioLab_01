@@ -27,8 +27,8 @@ class WhoWeHelpMenu extends Component
         for (let i = 0; i < menuEl.length ; i++)
         {
             const menuList =
-                <li>
-                    <Link key={i}
+                <li key={"who-we-help-menu-" + i}>
+                    <Link
                           onClick={e => handleClickWhoWeHelp(e, i)}
                           activeClass="active"
                           to="scroll-who-we-help"

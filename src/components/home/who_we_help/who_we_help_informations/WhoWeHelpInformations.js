@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 
 import './_who_we_help_informations.scss';
-import WhoWeHelpInformationsList1 from "./lists/List1";
-import WhoWeHelpInformationsList2 from "./lists/List2";
-import WhoWeHelpInformationsList3 from "./lists/List3";
+import WhoWeHelpInformationsFoundations from "./list/foundations";
+import WhoWeHelpInformationsOrganizations from "./list/organizations";
+import WhoWeHelpInformationsLocal from "./list/local";
 
 class WhoWeHelpInformations extends Component
 {
@@ -13,15 +13,11 @@ class WhoWeHelpInformations extends Component
 
         return (
             <>
-
-                    <div className="who-we-help-informations">
-                        <div className="who-we-help-informations-text">
-                            {activeLi === 0 && <WhoWeHelpInformationsList1/>}
-                            {activeLi === 1 && <WhoWeHelpInformationsList2/>}
-                            {activeLi === 2 && <WhoWeHelpInformationsList3/>}
-                        </div>
-
-                    </div>
+                <div className="who-we-help-informations">
+                        {activeLi === 0 && <WhoWeHelpInformationsFoundations/>}
+                        {activeLi === 1 && <WhoWeHelpInformationsOrganizations/>}
+                        {activeLi === 2 && <WhoWeHelpInformationsLocal/>}
+                </div>
             </>
         )
     }
