@@ -7,6 +7,7 @@ import MainSection from './main_section/MainSection';
 import FourSteps from "./four_steps/FourSteps";
 import AboutUs from "./about_us/AboutUs";
 import WhoWeHelp from "./who_we_help/WhoWeHelp";
+import ContactForm from "./contact_form/ContactForm";
 
 
 
@@ -22,6 +23,7 @@ class Home extends Component
                 <FourSteps/>
                 <AboutUs/>
                 <WhoWeHelp/>
+                <ContactForm/>
             </>
         )
     }

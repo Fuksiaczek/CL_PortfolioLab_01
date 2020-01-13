@@ -48,7 +48,11 @@ render() {
                                     delay={100}>Fundacja i organizacje</Link>
                             </li>
                             <li>
-                                <Link to="">Kontakt</Link>
+                                <Link  activeClass="active"
+                                       to="scroll-contact-form"
+                                       smooth={true}
+                                       duration={500}
+                                       delay={100}>Kontakt</Link>
                             </li>
                         </ul>
                     </nav>
