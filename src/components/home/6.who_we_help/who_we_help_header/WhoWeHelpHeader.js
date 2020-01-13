@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import './_who_we_help_header.scss';
-import Decorator from "../../../decorator/Decorator";
+import Decorator from "../../../general/decorator/Decorator";
 
 class WhoWeHelpHeader extends Component
 {

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import "./_contact_form.scss";
-import Decorator from "../../decorator/Decorator";
+import Decorator from "../../general/decorator/Decorator";
+import Footer from "../8.footer/Footer";
 
 class ContactForm extends Component
 {
@@ -34,6 +35,7 @@ class ContactForm extends Component
                                 </form>
                             </div>
                         </div>
+                        <Footer/>
                     </div>
                 </section>
             </>
