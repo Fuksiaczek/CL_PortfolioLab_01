@@ -13,7 +13,7 @@ function App() {
     return (
         <HashRouter>
             <>
-                <Route exact path='/' render={() => <Home/>} />
+                <Route exact path='/' render={() => <Home/>}/>
             </>
         </HashRouter>
     )}
