@@ -7,6 +7,9 @@ class ContactForm extends Component
 {
 
 
+
+
+
     render() {
         return (
             <>
@@ -25,13 +28,13 @@ class ContactForm extends Component
                                         <input type="email" name="email" placeholder="abc@xyz.pl"/>
                                     </label>
                                     <label>Wpisz swoją wiadomość
-                                        <textarea name="text"
+                                        <textarea name="message"
                                                   placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                                   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                                   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                                                   nisi ut aliquip ex ea commodo consequat."/>
                                     </label>
-                                    <button>Wyślij</button>
+                                    <input className="form-button" type="submit" value="Wyślij"/>
                                 </form>
                             </div>
                         </div>

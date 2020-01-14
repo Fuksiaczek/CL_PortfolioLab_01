@@ -2,7 +2,6 @@
 
 .who-we-help-informations-list
 {
-
   width: 100%;
   display: flex;
   justify-content: center;
@@ -32,6 +31,7 @@
     width: 100%;
 
     .list-text-info {
+
       li {
         font-family: $font-alt;
         display: flex;
@@ -52,9 +52,7 @@
             line-height: 2rem;
           }
         }
-
       }
-
     }
 
     .list-text-pages {
@@ -66,14 +64,19 @@
 
       li {
         padding: 20px 15px;
+        margin: 0 5px;
         cursor: pointer;
+        border: 1px solid transparent;
       }
 
       li:hover {
         border: 1px solid $color-font;
       }
-    }
 
+      li.active {
+        border: 1px solid $color-font;
+      }
+    }
     }
   }
 

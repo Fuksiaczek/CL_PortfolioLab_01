@@ -5,7 +5,7 @@ import '../_list.scss';
 class WhoWeHelpInformationsFoundations extends Component
 {
     state = {
-        mainInfo: "W naszej bazie znajdziesz listę zweryfikowanych Funcadji, z którymi współpracujemy. " +
+        mainInfo: "W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. " +
             "Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.",
         info: [
             ["Fundacja “Dbam o zdrowie”", "Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.", "ubrania, jedzenie, sprzęt AGD, meble, zabawki"],
@@ -58,8 +58,9 @@ class WhoWeHelpInformationsFoundations extends Component
         {
             const pageNumberElement =
                 <li key={"foundations-pages" + i}
-                    onClick={e => this.handleClick(e, i)}>
-                        {i}
+                    onClick={e => this.handleClick(e, i)}
+                    className={(this.state.currentPage === i) ? "active" : ""}>
+                    {i}
                 </li>;
             pageNumbers.push(pageNumberElement);
         }

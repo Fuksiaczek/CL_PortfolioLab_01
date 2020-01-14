@@ -53,7 +53,8 @@ class WhoWeHelpInformationsLocal extends Component
         {
             const pageNumberElement =
                 <li key={"local-pages-" + i}
-                    onClick={e => this.handleClick(e, i)}>
+                    onClick={e => this.handleClick(e, i)}
+                    className={this.state.currentPage === i ? "active" : ""}>
                         {i}
                 </li>;
             pageNumbers.push(pageNumberElement);

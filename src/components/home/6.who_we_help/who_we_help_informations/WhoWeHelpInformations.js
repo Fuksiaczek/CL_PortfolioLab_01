@@ -14,9 +14,9 @@ class WhoWeHelpInformations extends Component
         return (
             <>
                 <div className="who-we-help-informations">
-                        {activeLi === 0 && <WhoWeHelpInformationsFoundations/>}
-                        {activeLi === 1 && <WhoWeHelpInformationsOrganizations/>}
-                        {activeLi === 2 && <WhoWeHelpInformationsLocal/>}
+                    {activeLi === 0 && <WhoWeHelpInformationsFoundations/>}
+                    {activeLi === 1 && <WhoWeHelpInformationsOrganizations/>}
+                    {activeLi === 2 && <WhoWeHelpInformationsLocal/>}
                 </div>
             </>
         )

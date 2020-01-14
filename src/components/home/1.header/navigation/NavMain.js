@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './_navigation.scss';
 
-import { Link} from 'react-scroll'
+import {Link} from 'react-scroll'
 
 
 
