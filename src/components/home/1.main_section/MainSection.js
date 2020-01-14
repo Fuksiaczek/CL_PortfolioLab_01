@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './_main_section.scss';
 
 import {Link} from "react-router-dom";
-import Decorator from "../../decorator/Decorator";
+import Decorator from "../../general/decorator/Decorator";
 
 
 

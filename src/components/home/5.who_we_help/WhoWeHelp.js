@@ -8,8 +8,7 @@ class WhoWeHelp extends Component
 {
     state =
         {
-            activeLi: null,
-
+            activeLi: 0,
         };
 
 
@@ -28,7 +27,8 @@ class WhoWeHelp extends Component
                         <div className="who-we-help">
                             <WhoWeHelpHeader/>
                             <WhoWeHelpMenu
-                                handleClickWhoWeHelp={this.handleClickWhoWeHelp}/>
+                                handleClickWhoWeHelp={this.handleClickWhoWeHelp}
+                                activeLi={this.state.activeLi}/>
                             <WhoWeHelpInformations
                                 activeLi={this.state.activeLi}/>
                         </div>

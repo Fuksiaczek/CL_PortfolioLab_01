@@ -11,23 +11,17 @@ class WhoWeHelpMenu extends Component
             menuEl: ["Fundacjom", "Organizacjom pozarządowym", "Lokalnym zbiórkom"]
         };
 
-    // handleClickWhoWeHelp = (e, i) =>
-    // {
-    //     this.setState({
-    //         activeLi: i
-    //     })
-    // };
-
 
     render() {
         const {menuEl} = this.state;
-        const {handleClickWhoWeHelp} = this.props;
+        const {handleClickWhoWeHelp, activeLi} = this.props;
 
         const menu = [];
         for (let i = 0; i < menuEl.length ; i++)
         {
             const menuList =
-                <li key={"who-we-help-menu-" + i}>
+                <li key={"who-we-help-menu-" + i}
+                    className={(activeLi === i) ? "active" : ""}>
                     <Link
                           onClick={e => handleClickWhoWeHelp(e, i)}
                           activeClass="active"

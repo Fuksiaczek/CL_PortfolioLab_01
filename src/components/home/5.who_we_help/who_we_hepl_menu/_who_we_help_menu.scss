@@ -24,12 +24,18 @@
       justify-content: center;
       align-items: center;
       line-height: 2rem;
+      margin: 0 5px;
       }
 
       li:hover
       {
         border: 1px solid $color-font;
         cursor: pointer;
+      }
+
+      li.active
+      {
+        border: 1px solid $color-font;
       }
     }
 }

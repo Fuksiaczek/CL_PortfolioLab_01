@@ -1,0 +1,57 @@
+@import "../../../main";
+
+@mixin img-content
+{
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+}
+
+.footer
+{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 10px;
+
+  .footer-content
+  {
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p
+    {
+      font-family: $font-base;
+      font-size: 1.3rem;
+    }
+
+
+    .footer-content-img
+    {
+
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      .footer-content-img-facebook
+      {
+        @include img-content;
+        background: url("/assets/Facebook.svg") no-repeat center/cover;
+      }
+
+      .footer-content-img-instagram
+      {
+        @include img-content;
+        background: url("/assets/Instagram.svg") no-repeat center/cover;
+      }
+
+
+    }
+
+
+  }
+
+}

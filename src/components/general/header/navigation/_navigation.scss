@@ -15,6 +15,7 @@
     a
     {
       color: $color-font;
+      border: 1px solid transparent;
     }
   }
 }
@@ -60,6 +61,7 @@
       border: 1px solid $color-font;
       cursor: pointer;
     }
+
   }
 }
 

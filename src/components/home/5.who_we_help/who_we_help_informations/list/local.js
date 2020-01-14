@@ -2,26 +2,22 @@ import React, {Component} from 'react';
 
 import '../_list.scss';
 
-class WhoWeHelpInformationsFoundations extends Component
+class WhoWeHelpInformationsLocal extends Component
 {
     state = {
-        mainInfo: "W naszej bazie znajdziesz listę zweryfikowanych Funcadji, z którymi współpracujemy. " +
-            "Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.",
+        mainInfo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt " +
+            "ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
         info: [
-            ["Fundacja “Dbam o zdrowie”", "Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.", "ubrania, jedzenie, sprzęt AGD, meble, zabawki"],
-            ["Fundacja “Dla dzieci”", "Cel i misja: Pomoc dzieciom z ubogich rodzin.", "ubrania, meble, zabawki"],
-            ["Fundacja “Bez domu”", "Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.", "ubrania, jedzenie, ciepłe koce"],
-            ["Fundacja “Lorem Ipsum 4”", "Quis varius quam quisque id diam vel quam elementum pulvinar.", "Egestas, sed, tempus"],
-            ["Fundacja “Lorem Ipsum 5”", "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.", "Ut, aliquam, purus, sit, amet"],
-            ["Fundacja “Lorem Ipsum 6”", "Scelerisque in dictum non consectetur a erat nam.", "Ut, aliquam, purus, sit, amet"],
-            ["Fundacja “Lorem Ipsum 7”", "Quis varius quam quisque id diam vel quam elementum pulvinar.", "Egestas, sed, tempus"],
-            ["Fundacja “Lorem Ipsum 8”", "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.", "Ut, aliquam, purus, sit, amet"],
-            ["Fundacja “Lorem Ipsum 9”", "Scelerisque in dictum non consectetur a erat nam.", "Ut, aliquam, purus, sit, amet"],
+            ["Zbiórka “Lorem Ipsum 1”", "Quis varius quam quisque id diam vel quam elementum pulvinar.", "Egestas, sed, tempus"],
+            ["Zbiórka “Lorem Ipsum 2”", "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.", "Ut, aliquam, purus, sit, amet"],
+            ["Zbiórka “Lorem Ipsum 3”", "Scelerisque in dictum non consectetur a erat nam.", "Ut, aliquam, purus, sit, amet"],
+
         ],
         currentPage: 1,
         infoPerPage: 3
 
     };
+
 
     handleClick = (e, i) =>
     {
@@ -40,7 +36,7 @@ class WhoWeHelpInformationsFoundations extends Component
         const informations = currentInfo.map((element, i) =>
         {
             return (
-                <li key={"foundations-" + i}>
+                <li key={"local-" + i}>
                     <div className="list-text-main">
                         <h3>{element[0]}</h3>
                         <p>{element[1]}</p>
@@ -53,12 +49,12 @@ class WhoWeHelpInformationsFoundations extends Component
 
         const pageNumbers = [];
         const numerOfPages = Math.ceil(info.length/infoPerPage);
-
         for (let i = 1; i <= numerOfPages ; i++)
         {
             const pageNumberElement =
-                <li key={"foundations-pages" + i}
-                    onClick={e => this.handleClick(e, i)}>
+                <li key={"local-pages-" + i}
+                    onClick={e => this.handleClick(e, i)}
+                    className={this.state.currentPage === i ? "active" : ""}>
                         {i}
                 </li>;
             pageNumbers.push(pageNumberElement);
@@ -86,4 +82,4 @@ class WhoWeHelpInformationsFoundations extends Component
     }
 }
 
-export default WhoWeHelpInformationsFoundations;
+export default WhoWeHelpInformationsLocal;

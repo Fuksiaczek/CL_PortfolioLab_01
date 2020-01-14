@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './_about_us.scss';
-import Decorator from "../../decorator/Decorator";
+import Decorator from "../../general/decorator/Decorator";
 
 
 class AboutUs extends Component
