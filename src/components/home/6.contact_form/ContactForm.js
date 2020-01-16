@@ -8,116 +8,133 @@ class ContactForm extends Component
     state =
         {
             name: "",
-            nameVal: null,
+            nameVal: false,
             email: "",
-            emailVal: null,
+            emailVal: false,
             message: "",
-            messageVal: null,
+            messageVal: false,
             submitMessage: "",
             errorClassName: "form-error",
             submitHandle: false,
         };
 
-    handleChange = e =>
+    emailValidate = (email) =>
+    {
+    const emailValidationCharSet = /^(([^<>()[\]\\.,;:\s@]+(\.[^<>()[\]\\.,;:\s@]+)*)|(.+))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return emailValidationCharSet.test(email);
+    };
+
+    handleChangeName = e =>
     {
         this.setState({
-            [e.target.name]: e.target.value.replace(" ", ""),
-            [e.target.email]: e.target.value.replace(" ", ""),
-            [e.target.message]: e.target.value,
+            name: e.target.value.replace(" ", ""),
         });
+        if(this.state.name !== "")
+        {
+            this.setState({
+                nameVal: true,
+            })
+        }
+    };
+
+    handleChangeEmail = e =>
+    {
+        this.setState({
+            email: e.target.value
+        });
+        if(this.emailValidate(this.state.email))
+        {
+            this.setState({
+                emailVal: true,
+            })
+        }
+    };
+
+    handleChangeMessage = e =>
+    {
+        this.setState({
+            message: e.target.value,
+        });
+        if(this.state.message.length >= 119)
+        {
+            this.setState({
+                messageVal: true,
+            })
+        }
     };
 
     handleSubmit = e =>
     {
         e.preventDefault();
 
-        const {name, nameVal, email, emailVal, message, messageVal} = this.state;
+        const {name, email, message} = this.state;
 
-        this.setState({
-            nameVal: false,
-            emailVal: false,
-            messageVal: false
-        });
+        let nameValVar;
+        let emailValVar;
+        let messageValVar;
 
-        function emailValidate(email)
+        if(name !== "")
         {
-            const emailValidationCharSet = /^(([^<>()[\]\\.,;:\s@]+(\.[^<>()[\]\\.,;:\s@]+)*)|(.+))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            return emailValidationCharSet.test(email);
+            nameValVar = true;
+            this.setState({
+                nameVal: true,
+            })
         }
 
-            if(name !== "")
-            {
-                this.setState({
-                    nameVal: true,
-                });
-            }else
-            {
-                console.log("błędne imie");
-            }
+        if(this.emailValidate(email))
+        {
+            emailValVar = true;
+            this.setState({
+                emailVal: true,
+            })
+        }
 
-            if(emailValidate(email))
-            {
-                this.setState({
-                    emailVal: true,
+        if(message.length > 120)
+        {
+            messageValVar = true;
+            this.setState({
+                messageVal: true,
+            })
+        }
+
+        if(nameValVar && emailValVar && messageValVar)
+        {
+            fetch("https://fer-api.coderslab.pl/v1/portfolio/contact",
+                {
+                    headers: {"Content-Type": "application/json"},
+                    method: 'POST',
+                    dataType: "json",
+                    body: JSON.stringify({name, email, message}),
                 })
-            }
-            else
-            {
-                console.log("błędny email");
-            }
-
-            if(message.length >= 120)
-            {
-                this.setState({
-                   messageVal: true,
-                })
-            }
-            else
-            {
-                console.log("błęda wiadomość");
-            }
-
-            if( nameVal && emailVal && messageVal)
-            {
-                console.log("co jest wysyłane: " + name + " " + email + " " + message);
-
-                fetch("https://fer-api.coderslab.pl/v1/portfolio/contact",
-                    {
-                        headers: {"Content-Type": "application/json"},
-                        method: 'POST',
-                        dataType: "json",
-                        body: JSON.stringify(name, email, message),
-                    })
-                .then(resp =>{
-                    if (!resp.ok) {
-                        throw new Error("something is wrong...");
-                    }
-                    else
-                    {
-                        this.setState({
-                            submitMessage: "Wiadomośc została wysłana! W krótce się skontaktujemy.",
-                            name: "",
-                            email: "",
-                            message: "",
-                        });
-                        console.log(resp);
-                    }
-
-                })
-                .catch(err => console.error(err));
-            }
-            else
-            {
-                this.setState({
-                    submitMessage: "",
-                    submitHandle: true,
-                });
-            }
+            .then(resp =>{
+                if (!resp.ok) {
+                    throw new Error("something is wrong...");
+                }
+                else
+                {
+                    this.setState({
+                        submitMessage: "Wiadomośc została wysłana! W krótce się skontaktujemy.",
+                        name: "",
+                        email: "",
+                        message: "",
+                    });
+                    console.log(resp);
+                }
+            })
+            .catch(err => console.error(err));
+        }
+        else
+        {
+            this.setState({
+                submitMessage: "",
+                submitHandle: true,
+            });
+        }
     };
 
     render() {
         const {name, email, message, submitMessage, errorClassName, submitHandle,
-                nameVal, emailVal, messageVal} = this.state;
+            nameVal, emailVal, messageVal} = this.state;
         return (
             <>
                 <section className="section-contact-form " id="scroll-contact-form">
@@ -138,20 +155,20 @@ class ContactForm extends Component
                                                value={name}
                                                placeholder="Krzysztof"
                                                className={(!nameVal & submitHandle) && errorClassName}
-                                               onChange={this.handleChange}/>
+                                               onChange={this.handleChangeName}/>
                                         {(!nameVal && submitHandle) ?
-                                        <p className="contact-form-content-error">
-                                            Podane imię jest nieprawidłowe!
-                                        </p> :
-                                        <div className="contact-form-content-invisible"/>}
+                                            <p className="contact-form-content-error">
+                                                Podane imię jest nieprawidłowe!
+                                            </p> :
+                                            <div className="contact-form-content-invisible"/>}
                                     </label>
 
                                     <label>Wpisz swój email
                                         <input type="email"
                                                name="email"
                                                value={email}
-                                               className={ (!emailVal & submitHandle) && errorClassName}
-                                               onChange={this.handleChange}
+                                               className={(!emailVal & submitHandle) && errorClassName}
+                                               onChange={this.handleChangeEmail}
                                                placeholder="abc@xyz.pl"/>
                                         {(!emailVal && submitHandle) ?
                                             <p className="contact-form-content-error">
@@ -163,7 +180,7 @@ class ContactForm extends Component
                                         <textarea name="message"
                                                   value={message}
                                                   className={(!messageVal & submitHandle) && errorClassName}
-                                                  onChange={this.handleChange}
+                                                  onChange={this.handleChangeMessage}
                                                   placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                                                   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                                   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris

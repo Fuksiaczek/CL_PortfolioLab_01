@@ -1,0 +1,68 @@
+@import "../../../../main";
+
+.nav
+{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  ul
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a
+    {
+      color: $color-font;
+      border: 1px solid transparent;
+    }
+  }
+}
+
+.nav-log-reg
+{
+  padding: 2.6rem 0.7rem 3.1rem 0;
+  margin-right: -0.7rem;
+  font-size: 1rem;
+
+  li
+  {
+    padding-left: 1rem;
+
+    a
+    {
+      padding: 9px 10px;
+    }
+
+    a:hover
+    {
+      border: 1px solid $color-contrast;
+    }
+  }
+}
+
+.nav-main
+{
+  font-size: 1.3rem;
+  margin-right: -20px;
+
+  li
+  {
+    padding-left: 1rem;
+
+    a
+    {
+      padding: 9px 20px;
+    }
+
+    a:hover
+    {
+      border: 1px solid $color-font;
+      cursor: pointer;
+    }
+
+  }
+}
+
+

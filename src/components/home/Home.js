@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import Header from '../general/header/header/Header';
+import Header from './0.header/header/Header';
 import ThreeColumns from './2.three_columns/ThreeColumns';
 import MainSection from './1.main_section/MainSection';
 import FourSteps from "./3.four_steps/FourSteps";
