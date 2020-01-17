@@ -1,0 +1,35 @@
+@import "../../main";
+.section-logout-panel
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .logout-panel
+  {
+    padding: 100px 400px 0 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+
+    .logout-btn
+    {
+      align-self: flex-end;
+      font-size: 1.3rem;
+      font-weight: 300;
+      width: 150px;
+      height: 50px;
+      background: none;
+      border: 1px solid transparent;
+    }
+
+    .logout-btn:hover
+    {
+      border: 1px solid $color-font;
+      cursor: pointer;
+    }
+  }
+}
+
