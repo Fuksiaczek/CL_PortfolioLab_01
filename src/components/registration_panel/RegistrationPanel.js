@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 
-import "./_login_panel.scss"
+import "./_registration_panel.scss"
 
-import Header from "./0.header/header/Header";
+import Header from "../home/0.header/header/Header";
 import Decorator from "../general/decorator/Decorator";
 import {Link} from "react-router-dom";
 
-class LoginPanel extends Component
+class RegistrationPanel extends Component
 {
     state =
         {
@@ -14,8 +14,11 @@ class LoginPanel extends Component
             emailVal: false,
             password: "",
             passwordVal: false,
+            passwordRepeat: "",
+            passwordRepeatVal: false,
             errorClassName: "form-error",
             submitHandle: false,
+            submitVal: false
         };
 
     emailValidate = (email) =>
@@ -62,11 +65,30 @@ class LoginPanel extends Component
         }
     };
 
+    handleChangePasswordRepeat = e =>
+    {
+        this.setState({
+            passwordRepeat: e.target.value.replace(" ", "")
+        });
+        if(this.state.passwordRepeat === this.state.password && this.state.passwordRepeat >= 5)
+        {
+            this.setState({
+                passwordRepeatVal: true,
+            })
+        }
+        else
+        {
+            this.setState({
+                passwordRepeatVal: false,
+            })
+        }
+    };
+
     handleSubmit = e => {
 
         e.preventDefault();
 
-        const {password, email} = this.state;
+        const {password, email, passwordRepeat} = this.state;
 
         this.setState({
             emailVal: false,
@@ -86,22 +108,25 @@ class LoginPanel extends Component
             })
         }
 
-
-
+        if (passwordRepeat === password && passwordRepeat >= 5) {
+            this.setState({
+                passwordRepeatVal: true,
+            })
+        }
     };
 
-
     render() {
-        const {emailVal, passwordVal, submitHandle, errorClassName, password, email} = this.state;
+        const {email, emailVal, password, passwordVal, passwordRepeat, passwordRepeatVal,
+            submitHandle, errorClassName} = this.state;
         return (
             <>
                 <Header/>
-                <section className="section-log-in-panel">
+                <section className="section-registration-panel">
                     <div className="container">
-                        <div className="log-in-panel">
-                            <h2>Zaloguj się</h2>
+                        <div className="registration-panel">
+                            <h2>Złóż konto</h2>
                             <Decorator/>
-                            <div className="log-in-panel-form">
+                            <div className="registration-panel-form">
                                 <form onSubmit={this.handleSubmit}>
                                     <label>Email
                                         <input type="email"
@@ -109,7 +134,7 @@ class LoginPanel extends Component
                                                value={email}
                                                onChange={this.handleChangeEmail}
                                                className={(!emailVal & submitHandle) && errorClassName}/>
-                                            {(!emailVal && submitHandle) ?
+                                        {(!emailVal && submitHandle) ?
                                             <p className="panel-form-error">
                                                 Podany email jest nieprawidłowy!
                                             </p> :
@@ -121,21 +146,34 @@ class LoginPanel extends Component
                                                value={password}
                                                onChange={this.handleChangePassword}
                                                className={(!passwordVal & submitHandle) && errorClassName}/>
-                                            {(!passwordVal && submitHandle) ?
+                                        {(!passwordVal && submitHandle) ?
                                             <p className="panel-form-error">
                                                 Podane hasło jest nieprawidłowe!
                                             </p> :
                                             <div className="panel-form-invisible"/>}
                                     </label>
-                                    <div className="log-in-panel-form-buttons">
-                                        <Link to="/registration">
+                                    <label>Powtórz hasło
+                                        <input type="password"
+                                               name="password"
+                                               value={passwordRepeat}
+                                               onChange={this.handleChangePasswordRepeat}
+                                               className={(!passwordRepeatVal & submitHandle) && errorClassName}/>
+                                        {(!passwordRepeatVal && submitHandle) ?
+                                            <p className="panel-form-error">
+                                                Podane hasła nie są identyczne!
+                                            </p> :
+                                            <div className="panel-form-invisible"/>}
+                                    </label>
+                                    <div className="registration-panel-form-buttons">
+                                        <Link to="/login">
                                             <input className="form-btn"
                                                    type="button"
-                                                   value="Złóż konto"/>
+                                                   value="Zaloguj się"/>
                                         </Link>
                                         <input className="form-btn"
                                                type="submit"
-                                               value="Zaloguj się"/>
+                                               value="Załóż konto"/>
+
                                     </div>
                                 </form>
                             </div>
@@ -147,4 +185,4 @@ class LoginPanel extends Component
     }
 }
 
-export default LoginPanel;
+export default RegistrationPanel;
