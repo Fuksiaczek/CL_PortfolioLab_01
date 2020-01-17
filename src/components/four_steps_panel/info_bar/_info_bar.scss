@@ -1,0 +1,22 @@
+@import "../../../main";
+
+
+.section-four-steps-panel-info-bar
+{
+  height: 180px;
+  background: $color-contrast;
+
+  .info-bar
+  {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: flex-start;
+    flex-direction: column;
+
+    h3
+    {
+      padding-bottom: 1rem;
+    }
+  }
+}

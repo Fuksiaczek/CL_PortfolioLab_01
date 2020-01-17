@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './_four_steps_panel_main_section.scss';
 
-import {Link} from "react-router-dom";
 import Decorator from "../../general/decorator/Decorator";
 
 
