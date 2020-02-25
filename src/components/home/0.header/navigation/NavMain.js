@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './_navigation.scss';
 
 import {Link} from 'react-scroll'
-
+import {NavLink} from "react-router-dom";
 
 
 class NavMain extends Component
@@ -14,13 +14,19 @@ render() {
                 <div className="container">
                     <nav className="nav-main nav">
                         <ul>
-                            <li>
+                            <li>{this.props.path === "/" ?
                                 <Link
                                     activeClass="active"
                                     to="scroll-main"
                                     smooth={true}
                                     duration={500}
-                                    delay={100}>Start</Link>
+                                    delay={100}>
+                                    Start
+                                </Link>:
+                                <NavLink
+                                    to="/">
+                                    Start
+                                </NavLink>}
                             </li>
                             <li>
                                 <Link
