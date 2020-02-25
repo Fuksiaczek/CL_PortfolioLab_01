@@ -14,10 +14,11 @@ import LogoutPanel from "./components/logout_panel/LogoutPanel";
 import FourStepsPanel from "./components/four_steps_panel/FourStepsPanel";
 
 function App() {
-    return (
+
+        return (
         <HashRouter>
             <>
-                <Route exact path='/' render={() => <Home/>}/>
+                <Route exact path='/' render={() => <Home path="/"/>}/>
                 <Route exact path='/login' render={() => <LoginPanel/>}/>
                 <Route exact path='/registration' render={() => <RegistrationPanel/>}/>
                 <Route exact path='/wylogowano' render={() => <LogoutPanel/>}/>

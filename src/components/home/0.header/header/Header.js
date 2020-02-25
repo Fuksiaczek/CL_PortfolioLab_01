@@ -11,8 +11,8 @@ class Header extends Component
             <>
                 <header className="header">
                     <NavLogRegist/>
-                    <NavMain/>
                 </header>
+                <NavMain path={this.props.path}/>
             </>
         )
     }

@@ -13,7 +13,7 @@ class Home extends Component
     render() {
         return (
             <>
-                <Header/>
+                <Header path={this.props.path}/>
                 <MainSection/>
                 <ThreeColumns/>
                 <FourSteps/>

@@ -8,18 +8,21 @@ class ContentSectionStep1 extends Component
 {
     state =
         {
-          checked: "",
+            checked: "",
+            disabled: true,
         };
 
     handleChange = (e) =>
     {
         this.setState({
             checked: e.currentTarget.value,
-        })
+            disabled: false
+        });
     };
 
 
     render() {
+        const {checked, disabled} = this.state;
         return (
             <>
                 <section className="section-four-steps-content">
@@ -27,12 +30,12 @@ class ContentSectionStep1 extends Component
                         <div className="content">
                             <div className="content-main">
                                 <div className="content-main-step-info">
-                                    <h3>Krok 1/4</h3>
+                                    <h3>Krok {this.props.currentStep}/4</h3>
                                 </div>
                                 <div className="content-main-header">
                                     <h2>Zaznacz co chcesz oddać</h2>
                                 </div>
-                                <form >
+                                <form className="content-main-step1">
                                     <input type="radio"
                                            name="option"
                                            value="ubrania, które nadają się do ponownego użycia"
@@ -90,9 +93,12 @@ class ContentSectionStep1 extends Component
                                     </label>
                                 </form>
                             </div>
-                            <button onClick={()=>this.props.step1Update(this.state.chacked)}>
-                                Dalej
-                            </button>
+                            <div className="content-btns">
+                                <button onClick={()=>this.props.stepUpdate({checked})}
+                                        disabled={disabled}>
+                                    Dalej
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </section>
