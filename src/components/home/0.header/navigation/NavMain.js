@@ -4,12 +4,14 @@ import './_navigation.scss';
 import {Link} from 'react-scroll'
 import {NavLink} from "react-router-dom";
 
+
 class NavMain extends Component
 {
+
 render() {
         return (
             <>
-                <div className="sticky-nav-main">
+                <div className={this.props.path === "/" ? "sticky-nav-main" : ""}>
                     <div className="container">
                         <nav className="nav-main nav">
                             <ul>
@@ -34,9 +36,7 @@ render() {
                                         smooth={true}
                                         duration={500}
                                         delay={100}
-                                        offset={-100}>
-                                        O co chodzi?
-                                    </Link>
+                                        offset={-100}>O co chodzi?</Link>
                                 </li>
                                 <li>
                                     <Link
@@ -65,7 +65,6 @@ render() {
                         </nav>
                     </div>
                 </div>
-
             </>
         )
     }

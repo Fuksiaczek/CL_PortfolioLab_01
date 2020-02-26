@@ -21,3 +21,11 @@ An application that helps users give their old things back into good hands like 
   `npm install`
 - #### preview
   `npm start` and go to [http://localhost:3000/](http://localhost:3000/)
+
+### Landing page Demo:
+
+![](public/demo/landingpage-demo.gif)
+
+### Login and registration Demo:
+
+![](public/demo/login-registration-demo.gif)

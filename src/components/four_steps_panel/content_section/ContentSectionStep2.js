@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import './_content_section.scss';
 
 
-
-
 class ContentSectionStep2 extends Component
 {
     state =

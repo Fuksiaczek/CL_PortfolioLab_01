@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import "./_login_panel.scss"
 
-import Header from "./../home/0.header/header/Header";
+import Header from "../home/0.header/header/Header";
 import Decorator from "../general/decorator/Decorator";
 import {Link} from "react-router-dom";
 
