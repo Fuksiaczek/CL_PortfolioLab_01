@@ -12,8 +12,7 @@ class InfoBar extends Component
                         <div className="info-bar">
                             <h2>Ważne!</h2>
                             <h3>
-                                Uzupełnij szczegóły dotyczące Twoich rzeczy.
-                                Dzięki temu będziemy wiedzieć komu najlepiej je przekazać.
+                                {this.props.yellowBarInfo}
                             </h3>
                         </div>
                     </div>

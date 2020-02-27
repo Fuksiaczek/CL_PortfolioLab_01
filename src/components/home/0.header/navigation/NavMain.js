@@ -11,7 +11,7 @@ class NavMain extends Component
 render() {
         return (
             <>
-                <div className="sticky-nav-main">
+                <div className={this.props.path === "/" ? "sticky-nav-main" : ""}>
                     <div className="container">
                         <nav className="nav-main nav">
                             <ul>
@@ -65,7 +65,6 @@ render() {
                         </nav>
                     </div>
                 </div>
-
             </>
         )
     }

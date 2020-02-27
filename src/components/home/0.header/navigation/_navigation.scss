@@ -1,4 +1,3 @@
-
 @import "../../../../main";
 
 .nav
@@ -19,7 +18,6 @@
       border: 1px solid transparent;
     }
   }
-
 }
 
 .nav-log-reg
@@ -44,38 +42,41 @@
   }
 }
 
-.sticky-nav-main
-{
+.sticky-nav-main {
   position: -webkit-sticky;
   background: $color-background-main;
-  padding: 3.1rem 0;
-  z-index: 2;
   position: sticky;
   top: 0;
+  z-index: 2;
+}
 
-  .nav-main
+.nav-main
+{
+  font-size: 1.3rem;
+  margin-right: -20px;
+  justify-self: flex-end;
+  align-self: flex-end;
+  padding: 3.1rem 0;
+  position: relative;
+  z-index: 2;
+
+  li
   {
-    font-size: 1.3rem;
-    margin-right: -20px;
-    justify-self: flex-end;
-    align-self: flex-end;
+    padding-left: 1rem;
 
-    li
-    {
-      padding-left: 1rem;
-
-    }
-
-    li > a
-    {
-      padding: 9px 20px;
-    }
-
-    li > a:hover
-    {
-      border: 1px solid $color-font;
-      cursor: pointer;
-    }
   }
 
+  li > a
+  {
+    padding: 9px 20px;
+  }
+
+  li > a:hover
+  {
+    border: 1px solid $color-font;
+    cursor: pointer;
+  }
 }
+
+
+
