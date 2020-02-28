@@ -29,6 +29,12 @@ class ContentSectionStep3 extends Component
                 }
             })
         }
+        else
+        {
+            this.setState({
+                disabled: true,
+            });
+        }
     };
 
     handleChangeHelpGroups = (e) =>
@@ -72,7 +78,7 @@ class ContentSectionStep3 extends Component
                                 <form className="content-main-step3">
                                     <i className="fas fa-2x fa-chevron-down"/>
                                     <select onChange={this.handleChangeLocalization}>
-                                        <option disabled hidden value="">— wybierz —</option>
+                                        <option value="">— wybierz —</option>
                                         <option value="Poznań">Poznań</option>
                                         <option value="Warszawa">Warszawa</option>
                                         <option value="Kraków">Kraków</option>

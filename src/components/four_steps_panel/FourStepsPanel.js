@@ -7,6 +7,7 @@ import InfoBar from "./info_bar/InfoBar";
 import ContentSectionStep1 from "./content_section/ContentSectionStep1";
 import ContentSectionStep2 from "./content_section/ContentSectionStep2";
 import ContentSectionStep3 from "./content_section/ContentSectionStep3";
+import ContentSectionStep4 from "./content_section/ContentSectionStep4";
 
 
 class FourStepsPanel extends Component
@@ -18,6 +19,7 @@ class FourStepsPanel extends Component
         step1: "",
         step2: "",
         step3: {},
+        step4: {},
         currentStep: 1,
         yellowBarInfo: "Uzupełnij szczegóły dotyczące Twoich rzeczy. " +
             "Dzięki temu będziemy wiedzieć komu najlepiej je przekazać.",
@@ -54,6 +56,14 @@ class FourStepsPanel extends Component
             })
         }
 
+        if(this.state.currentStep === 4)
+        {
+            this.setState({
+                step4: stepValue,
+                currentStep: this.state.currentStep + 1,
+            })
+        }
+
     };
 
     goBack = () =>
@@ -79,6 +89,10 @@ class FourStepsPanel extends Component
                                      goBack={this.goBack}/>}
                 {currentStep === 3 &&
                 <ContentSectionStep3 stepUpdate={(stepValue)=>this.stepUpdate(stepValue)}
+                                     currentStep={currentStep}
+                                     goBack={this.goBack}/>}
+                {currentStep === 4 &&
+                <ContentSectionStep4 stepUpdate={(stepValue)=>this.stepUpdate(stepValue)}
                                      currentStep={currentStep}
                                      goBack={this.goBack}/>}
                 <ContactForm/>
