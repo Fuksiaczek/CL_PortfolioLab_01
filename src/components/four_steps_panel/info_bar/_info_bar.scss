@@ -5,6 +5,8 @@
 {
   height: 180px;
   background: $color-contrast;
+  position: relative;
+  z-index: 4;
 
   .info-bar
   {
