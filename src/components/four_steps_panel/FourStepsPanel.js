@@ -8,6 +8,7 @@ import ContentSectionStep1 from "./content_section/ContentSectionStep1";
 import ContentSectionStep2 from "./content_section/ContentSectionStep2";
 import ContentSectionStep3 from "./content_section/ContentSectionStep3";
 import ContentSectionStep4 from "./content_section/ContentSectionStep4";
+import ContentSectionSummary from "./content_section/ContentSectionSummary";
 
 
 class FourStepsPanel extends Component
@@ -74,7 +75,7 @@ class FourStepsPanel extends Component
     };
 
     render() {
-        const {currentStep, yellowBarInfo,} = this.state;
+        const {currentStep, yellowBarInfo, step1, step2, step3, step4} = this.state;
         return (
             <>
                 <Header/>
@@ -95,6 +96,14 @@ class FourStepsPanel extends Component
                 <ContentSectionStep4 stepUpdate={(stepValue)=>this.stepUpdate(stepValue)}
                                      currentStep={currentStep}
                                      goBack={this.goBack}/>}
+                {currentStep === 5 &&
+                <ContentSectionSummary step1={step1}
+                                       step2={step2}
+                                       step3={step3}
+                                       step4={step4}
+                                       stepUpdate={()=>this.stepUpdate()}
+                                       currentStep={currentStep}
+                                       goBack={this.goBack}/>}
                 <ContactForm/>
             </>
         )
