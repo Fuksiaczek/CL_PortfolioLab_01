@@ -9,6 +9,7 @@ import ContentSectionStep2 from "./content_section/ContentSectionStep2";
 import ContentSectionStep3 from "./content_section/ContentSectionStep3";
 import ContentSectionStep4 from "./content_section/ContentSectionStep4";
 import ContentSectionSummary from "./content_section/ContentSectionSummary";
+import ContentSectionThanks from "./content_section/ContentSectionThanks";
 
 
 class FourStepsPanel extends Component
@@ -65,6 +66,12 @@ class FourStepsPanel extends Component
             })
         }
 
+        if(this.state.currentStep === 5) {
+            this.setState({
+                currentStep: this.state.currentStep + 1,
+            });
+        }
+
     };
 
     goBack = () =>
@@ -104,6 +111,8 @@ class FourStepsPanel extends Component
                                        stepUpdate={()=>this.stepUpdate()}
                                        currentStep={currentStep}
                                        goBack={this.goBack}/>}
+                {currentStep === 6 &&
+                <ContentSectionThanks/>}
                 <ContactForm/>
             </>
         )
