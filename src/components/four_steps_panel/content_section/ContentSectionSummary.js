@@ -60,7 +60,9 @@ class ContentSectionSummary extends Component
                                             <h3>{step4.checked.time}</h3>
                                         </div>
                                         <div>
-                                            <h3>Uwagi dla kuriera</h3>
+                                            <h3>Uwagi<br/>dla kuriera</h3>
+                                        </div>
+                                        <div className="content-main-summary-date-notes">
                                             <h3>{step4.checked.info}</h3>
                                         </div>
                                     </div>

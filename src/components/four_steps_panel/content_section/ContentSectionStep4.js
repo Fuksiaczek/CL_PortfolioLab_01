@@ -112,24 +112,35 @@ class ContentSectionStep3 extends Component
                     city: this.state.checked.city,
                     info: this.state.checked.info,
                 },
+            disabled: false,
         });
     };
 
     handleChangeInfo = (e) =>
     {
-        this.setState({
-            checked:
-                {
-                    info: e.currentTarget.value,
-                    street: this.state.checked.street,
-                    postcode: this.state.checked.postcode,
-                    phone: this.state.checked.phone,
-                    date: this.state.checked.date,
-                    time: this.state.checked.time,
-                    city: this.state.checked.city,
+        if(e.currentTarget.value.length > 100)
+        {
+            this.setState({
+                disabled: true,
+            });
+        }
+        else
+        {
+            this.setState({
+                checked:
+                    {
+                        info: e.currentTarget.value,
+                        street: this.state.checked.street,
+                        postcode: this.state.checked.postcode,
+                        phone: this.state.checked.phone,
+                        date: this.state.checked.date,
+                        time: this.state.checked.time,
+                        city: this.state.checked.city,
+                    },
+                disabled: false,
+            });
+        }
 
-                },
-        });
     };
 
 
@@ -147,7 +158,7 @@ class ContentSectionStep3 extends Component
                                     <h3>Krok {this.props.currentStep}/4</h3>
                                 </div>
                                 <div className="content-main-header">
-                                    <h2>Podaj adres oraz termin odbioru rzecz przez kuriera</h2>
+                                    <h2>Podaj adres oraz termin odbioru rzeczy przez kuriera</h2>
                                 </div>
                                 <div className="content-main-step4-forms">
                                     <form className="content-main-step4-forms-form">
@@ -205,6 +216,9 @@ class ContentSectionStep3 extends Component
                                                 onChange={this.handleChangeInfo}/>
                                         </label>
                                     </form>
+                                </div>
+                                <div className="content-main-step4-forms-info">
+                                    {disabled && <h4>wiadomość może mieć maksymalnie 100 znaków</h4>}
                                 </div>
                             </div>
                             <div className="content-btns">
