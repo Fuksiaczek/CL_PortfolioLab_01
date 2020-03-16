@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import './_content_section.scss';
-
+import './_content_section_step_2.scss';
 
 class ContentSectionStep2 extends Component
 {
@@ -29,7 +28,6 @@ class ContentSectionStep2 extends Component
             });
         }
     };
-
 
     render() {
         const {checked, disabled} = this.state;

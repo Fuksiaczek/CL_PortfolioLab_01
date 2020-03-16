@@ -1,36 +1,76 @@
-//step 1
+@import "../content_section";
+@include section-four-steps-content;
 
-.content-main-step1
+//step 4
+
+.content-main-step4-forms
 {
+  width: 83%;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 
-  label
+  .content-main-step4-forms-info
   {
+    width: 100%;
+  }
+
+
+  .content-main-step4-forms-form
+  {
+    width: 45%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
-    font-weight: 300;
-    cursor: pointer;
-  }
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+    position: relative;
 
-  input
-  {
-    display: none;
-  }
+    label,
+    {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      font-weight: 300;
+      cursor: pointer;
+      font-size: 1.5rem;
 
-  input + label span{
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    border: 1px solid $color-font;
-    margin-right: 20px;
-    cursor: pointer;
-  }
-  input:checked + label span {
-    background: $color-contrast;
+      h3
+      {
+        font-weight: 200;
+        padding: 0;
+      }
+
+      input
+      {
+        border: 1px solid $color-font;
+        background: none;
+        width: 250px;
+        height: 35px;
+        margin-left: 10px;
+        font-size: 1.6rem;
+        font-family: $font-base;
+        font-weight: 300;
+      }
+
+      textarea
+      {
+        border: 1px solid $color-font;
+        background: none;
+        width: 300px;
+        height: 120px;
+        font-size: 1.6rem;
+        font-family: $font-base;
+        font-weight: 300;
+      }
+
+    }
+
+    h3
+    {
+      font-weight: 400;
+      padding: 20px 0 10px 0;
+    }
+
   }
 }

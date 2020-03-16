@@ -1,11 +1,15 @@
-//step 1
+@import "../content_section";
+@include section-four-steps-content;
 
-.content-main-step1
+//step 2
+
+.content-main-step2
 {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
+  position: relative;
 
   label
   {
@@ -17,20 +21,44 @@
     cursor: pointer;
   }
 
-  input
+  select
   {
+    width: 300px;
+    height: 50px;
+    font-family: $font-base;
+    font-size: 1.7rem;
+    font-weight: 300;
+    margin-left: 20px;
+    padding-left: 20px;
+    background: none;
+    border: 1px solid $color-font;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    z-index: 2;
+    cursor: pointer;
+
+    option
+    {
+      background: $color-background-alt;
+    }
+
+  }
+
+  select::-ms-expand {
     display: none;
   }
 
-  input + label span{
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    border: 1px solid $color-font;
-    margin-right: 20px;
-    cursor: pointer;
+  select:focus
+  {
+    background: none;
   }
-  input:checked + label span {
-    background: $color-contrast;
+
+  i
+  {
+    position: absolute;
+    right: 30px;
+    z-index: 1;
   }
+
 }

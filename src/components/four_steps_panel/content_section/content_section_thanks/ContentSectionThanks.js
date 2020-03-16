@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './_content_section_thanks.scss';
-import Decorator from "../../general/decorator/Decorator";
+import Decorator from "../../../general/decorator/Decorator";
 
 
 class ContentSectionThanks extends Component

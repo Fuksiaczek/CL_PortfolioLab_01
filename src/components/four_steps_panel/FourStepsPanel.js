@@ -4,12 +4,12 @@ import Header from "../home/0.header/header/Header";
 import ContactForm from "../home/6.contact_form/ContactForm";
 import FourStepsPanelMainSection from "./four_steps_panel_main_section/FourStepsPanelMainSection"
 import InfoBar from "./info_bar/InfoBar";
-import ContentSectionStep1 from "./content_section/ContentSectionStep1";
-import ContentSectionStep2 from "./content_section/ContentSectionStep2";
-import ContentSectionStep3 from "./content_section/ContentSectionStep3";
-import ContentSectionStep4 from "./content_section/ContentSectionStep4";
-import ContentSectionSummary from "./content_section/ContentSectionSummary";
-import ContentSectionThanks from "./content_section/ContentSectionThanks";
+import ContentSectionStep1 from "./content_section/content_section_step_1/ContentSectionStep1";
+import ContentSectionStep2 from "./content_section/content_section_step_2/ContentSectionStep2";
+import ContentSectionStep3 from "./content_section/content_section_step_3/ContentSectionStep3";
+import ContentSectionStep4 from "./content_section/content_section_step_4/ContentSectionStep4";
+import ContentSectionSummary from "./content_section/content_section_summary/ContentSectionSummary";
+import ContentSectionThanks from "./content_section/content_section_thanks/ContentSectionThanks";
 
 
 class FourStepsPanel extends Component

@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
-import './_content_section.scss';
-
-
-
+import './_content_section_step_1.scss';
 
 class ContentSectionStep1 extends Component
 {
