@@ -8,6 +8,7 @@ class ContentSectionStep2 extends Component
         {
             checked: "",
             disabled: true,
+            bags: [1, 2, 3, 4, 5]
         };
 
     componentDidMount()
@@ -55,7 +56,7 @@ class ContentSectionStep2 extends Component
     };
 
     render() {
-        const {checked, disabled} = this.state;
+        const {checked, disabled, bags} = this.state;
         return (
             <>
                 <section className="section-four-steps-content">
@@ -71,60 +72,27 @@ class ContentSectionStep2 extends Component
                                 <form className="content-main-step2">
 
                                     <div className="content-main-step2-dropdown">
-                                        <span className="content-main-step2-dropdown-span"
-                                        onChange={this.handleChange}>— wybierz —</span>
+                                        <span className="content-main-step2-dropdown-span">
+                                            — wybierz —
+                                        </span>
                                         <button className="content-main-step2-dropdown-btn"/>
                                         <ul className="content-main-step2-dropdown-list">
-                                            <li>
-                                                <input type="radio"
-                                                       name="bag-count"
-                                                       value="1"
-                                                       id="bag-count-1"
-                                                       onChange={this.handleChange}/>
-                                                <label htmlFor="bag-count-1">
-                                                    <span>1</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <input type="radio"
-                                                       name="bag-count"
-                                                       value="2"
-                                                       id="bag-count-2"
-                                                       onChange={this.handleChange}/>
-                                                <label htmlFor="bag-count-2">
-                                                    <span>2</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <input type="radio"
-                                                       name="bag-count"
-                                                       value="3"
-                                                       id="bag-count-3"
-                                                       onChange={this.handleChange}/>
-                                                <label htmlFor="bag-count-3">
-                                                    <span>3</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <input type="radio"
-                                                       name="bag-count"
-                                                       value="4"
-                                                       id="bag-count-4"
-                                                       onChange={this.handleChange}/>
-                                                <label htmlFor="bag-count-4">
-                                                    <span>4</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <input type="radio"
-                                                       name="bag-count"
-                                                       value="5"
-                                                       id="bag-count-5"
-                                                       onChange={this.handleChange}/>
-                                                <label htmlFor="bag-count-5">
-                                                    <span>5</span>
-                                                </label>
-                                            </li>
+
+                                            {bags.map((bag) => (
+                                                <li key={`bag-count-${bag}`}>
+                                                    <input type="radio"
+                                                           name="bag-count"
+                                                           value={bag}
+                                                           id={`bag-count-${bag}`}
+                                                           onChange={this.handleChange}/>
+                                                    <label htmlFor={`bag-count-${bag}`}>
+                                                    <span>
+                                                        {bag}
+                                                    </span>
+                                                    </label>
+                                                </li>
+                                            ))}
+
                                         </ul>
                                     </div>
 

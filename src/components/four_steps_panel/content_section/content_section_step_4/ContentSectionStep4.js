@@ -222,7 +222,7 @@ class ContentSectionStep3 extends Component
                                 </div>
                             </div>
                             <div className="content-btns">
-                                <button >
+                                <button onClick={this.props.goBack}>
                                     Wstecz
                                 </button>
                                 <button onClick={()=>this.props.stepUpdate({checked})}

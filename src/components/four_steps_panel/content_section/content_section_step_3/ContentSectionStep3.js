@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './_content_section_step_3.scss';
+import $ from "jquery";
 
 
 class ContentSectionStep3 extends Component
@@ -13,7 +14,31 @@ class ContentSectionStep3 extends Component
             },
             checkboxDisabled: true,
             disabled: true,
+            cities: ["Katowice", "Kraków", "Poznań", "Warszawa", "Wrocław"],
         };
+
+    componentDidMount()
+    {
+        $(function () {
+
+            const $dropdownBtn = document.querySelector(".content-main-step3-dropdown-btn");
+            const $dropdownList = document.querySelector(".content-main-step3-dropdown-list");
+            const $dropdownLiList = $dropdownList.querySelectorAll("li");
+            const $dropdownSpan = document.querySelector(".content-main-step3-dropdown-span");
+
+            $dropdownBtn.addEventListener("click", function (e) {
+                e.preventDefault();
+                $dropdownList.classList.toggle("visible-dropdown-list");
+                $dropdownBtn.classList.toggle("rotate-btn");
+            });
+
+            for (let i = 0; i < $dropdownLiList.length; i++) {
+                $dropdownLiList[i].addEventListener("click", function (e) {
+                    $dropdownSpan.innerText = this.querySelector("span").innerText;
+                });
+            }
+        });
+    }
 
     handleChangeLocalization = (e) =>
     {
@@ -62,7 +87,7 @@ class ContentSectionStep3 extends Component
     };
 
     render() {
-        const {checked, checkboxDisabled, disabled} = this.state;
+        const {checked, checkboxDisabled, disabled, cities} = this.state;
         return (
             <>
                 <section className="section-four-steps-content">
@@ -76,15 +101,32 @@ class ContentSectionStep3 extends Component
                                     <h2>Lokalizacja:</h2>
                                 </div>
                                 <form className="content-main-step3">
-                                    <i className="fas fa-2x fa-chevron-down"/>
-                                    <select onChange={this.handleChangeLocalization}>
-                                        <option value="">— wybierz —</option>
-                                        <option value="Poznań">Poznań</option>
-                                        <option value="Warszawa">Warszawa</option>
-                                        <option value="Kraków">Kraków</option>
-                                        <option value="Wrocław">Wrocław</option>
-                                        <option value="Katowice">Katowice</option>
-                                    </select>
+
+                                    <div className="content-main-step3-dropdown">
+                                        <span className="content-main-step3-dropdown-span">
+                                            — wybierz —
+                                        </span>
+                                        <button className="content-main-step3-dropdown-btn"/>
+                                        <ul className="content-main-step3-dropdown-list">
+
+                                            {cities.map((city, index) => (
+                                                <li key={`city-${index}`}>
+                                                    <input type="radio"
+                                                           name="city"
+                                                           value={city}
+                                                           id={`city-${index}`}
+                                                           onChange={this.handleChangeLocalization}/>
+                                                    <label htmlFor={`city-${index}`}>
+                                                    <span>
+                                                        {city}
+                                                    </span>
+                                                    </label>
+                                                </li>
+                                            ))}
+
+                                        </ul>
+                                    </div>
+
                                     <h4>Komu chcesz pomóc?</h4>
                                     <div className="content-main-step3-checkboxes">
                                         <input type="checkbox"
@@ -147,7 +189,7 @@ class ContentSectionStep3 extends Component
                                 </form>
                             </div>
                             <div className="content-btns">
-                                <button >
+                                <button onClick={this.props.goBack}>
                                     Wstecz
                                 </button>
                                 <button onClick={()=>this.props.stepUpdate({checked})}

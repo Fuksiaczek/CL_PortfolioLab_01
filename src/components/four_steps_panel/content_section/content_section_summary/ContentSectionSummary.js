@@ -1,10 +1,22 @@
 import React, {Component} from 'react';
 import './_content_section_summary.scss';
+import $ from "jquery";
 
 
 class ContentSectionSummary extends Component
 {
 
+    componentDidMount()
+    {
+        $(function ()
+        {
+            const $backgroundImg = document.querySelector(".section-four-steps-content");
+            const $backgroundImgBtn = $backgroundImg.querySelector(".content-btns");
+
+            $backgroundImg.style.height = "100vh";
+            $backgroundImgBtn.style.top = "730px";
+        });
+    }
 
     render() {
         const {step1, step2, step3, step4} = this.props;
@@ -15,7 +27,7 @@ class ContentSectionSummary extends Component
                         <div className="content">
                             <div className="content-main">
                                 <div className="content-main-header">
-                                    <h2>Podaj adres oraz termin odbioru rzecz przez kuriera</h2>
+                                    <h2>Podsumowanie Twojej darowizny</h2>
                                 </div>
                                 <div className="content-main-summary">
                                     <div className="content-main-summary-info">
@@ -30,7 +42,7 @@ class ContentSectionSummary extends Component
                                             <h3>dla lokalizacji: {step3.checked.localization}</h3>
                                         </div>
                                     </div>
-                                    <div className="content-main-summary-adress">
+                                    <div className="content-main-summary-address">
                                         <h3 className="content-main-summary-header">Adres odbioru:</h3>
                                         <div>
                                             <h3>Ulica</h3>
@@ -69,7 +81,7 @@ class ContentSectionSummary extends Component
                                 </div>
                             </div>
                             <div className="content-btns">
-                                <button>
+                                <button onClick={this.props.goBack}>
                                     Wstecz
                                 </button>
                                 <button onClick={()=>this.props.stepUpdate()}>

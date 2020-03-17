@@ -1,10 +1,19 @@
 import React, {Component} from 'react';
 import './_content_section_thanks.scss';
 import Decorator from "../../../general/decorator/Decorator";
+import $ from "jquery";
 
 
 class ContentSectionThanks extends Component
 {
+    componentDidMount()
+    {
+        $(function ()
+        {
+            const $backgroundImg = document.querySelector(".section-four-steps-content");
+            $backgroundImg.style.height = "100vh";
+        });
+    }
 
     render() {
 

@@ -14,7 +14,6 @@ import ContentSectionThanks from "./content_section/content_section_thanks/Conte
 
 class FourStepsPanel extends Component
 {
-    componentDidMount;
 
     state =
     {
