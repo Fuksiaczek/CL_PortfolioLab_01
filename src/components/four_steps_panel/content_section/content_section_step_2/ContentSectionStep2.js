@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import $ from 'jquery';
 import './_content_section_step_2.scss';
 
 class ContentSectionStep2 extends Component
@@ -9,13 +10,37 @@ class ContentSectionStep2 extends Component
             disabled: true,
         };
 
+    componentDidMount()
+    {
+        $(function () {
+
+            const $dropdownBtn = document.querySelector(".content-main-step2-dropdown-btn");
+            const $dropdownList = document.querySelector(".content-main-step2-dropdown-list");
+            const $dropdownLiList = $dropdownList.querySelectorAll("li");
+            const $dropdownSpan = document.querySelector(".content-main-step2-dropdown-span");
+
+            $dropdownBtn.addEventListener("click", function (e) {
+                e.preventDefault();
+                $dropdownList.classList.toggle("visible-dropdown-list");
+                $dropdownBtn.classList.toggle("rotate-btn");
+            });
+
+            for (let i = 0; i < $dropdownLiList.length; i++) {
+                $dropdownLiList[i].addEventListener("click", function (e) {
+                    $dropdownSpan.innerText = this.querySelector("span").innerText;
+                });
+            }
+        });
+    }
+
     handleChange = (e) =>
     {
         this.setState({
             checked: e.currentTarget.value,
-            disabled: false,
+            disabled: true,
         });
-        if(e.currentTarget.value)
+
+        if(e.currentTarget.value.length === 1)
         {
             this.setState({
                 disabled: false,
@@ -44,20 +69,65 @@ class ContentSectionStep2 extends Component
                                     <h2>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h2>
                                 </div>
                                 <form className="content-main-step2">
-                                    <label>
-                                        <h3>
-                                            Liczba 60l worków:
-                                        </h3>
-                                        <i className="fas fa-2x fa-chevron-down"/>
-                                        <select onChange={this.handleChange}>
-                                            <option value="">— wybierz —</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                    </label>
+
+                                    <div className="content-main-step2-dropdown">
+                                        <span className="content-main-step2-dropdown-span"
+                                        onChange={this.handleChange}>— wybierz —</span>
+                                        <button className="content-main-step2-dropdown-btn"/>
+                                        <ul className="content-main-step2-dropdown-list">
+                                            <li>
+                                                <input type="radio"
+                                                       name="bag-count"
+                                                       value="1"
+                                                       id="bag-count-1"
+                                                       onChange={this.handleChange}/>
+                                                <label htmlFor="bag-count-1">
+                                                    <span>1</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input type="radio"
+                                                       name="bag-count"
+                                                       value="2"
+                                                       id="bag-count-2"
+                                                       onChange={this.handleChange}/>
+                                                <label htmlFor="bag-count-2">
+                                                    <span>2</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input type="radio"
+                                                       name="bag-count"
+                                                       value="3"
+                                                       id="bag-count-3"
+                                                       onChange={this.handleChange}/>
+                                                <label htmlFor="bag-count-3">
+                                                    <span>3</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input type="radio"
+                                                       name="bag-count"
+                                                       value="4"
+                                                       id="bag-count-4"
+                                                       onChange={this.handleChange}/>
+                                                <label htmlFor="bag-count-4">
+                                                    <span>4</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input type="radio"
+                                                       name="bag-count"
+                                                       value="5"
+                                                       id="bag-count-5"
+                                                       onChange={this.handleChange}/>
+                                                <label htmlFor="bag-count-5">
+                                                    <span>5</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+
                                 </form>
                             </div>
                             <div className="content-btns">

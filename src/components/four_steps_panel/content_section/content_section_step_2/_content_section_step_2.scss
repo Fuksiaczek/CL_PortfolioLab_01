@@ -3,26 +3,18 @@
 
 //step 2
 
-.content-main-step2
-{
+.content-main-step2 {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
   position: relative;
 
-  label
+  .content-main-step2-dropdown
   {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
-    font-weight: 300;
-    cursor: pointer;
-  }
-
-  select
-  {
     width: 300px;
     height: 50px;
     font-family: $font-base;
@@ -38,27 +30,75 @@
     z-index: 2;
     cursor: pointer;
 
-    option
+    button
     {
-      background: $color-background-alt;
+      height: 26px;
+      width: 57px;
+      background: url("/assets/Icon-Arrow-Down.svg") no-repeat center/cover;
+      background-size: 200%;
+      transition: 0.7s;
+
+      &:hover
+      {
+        cursor: pointer;
+      }
     }
 
+    .rotate-btn
+    {
+      transform: rotate(180deg);
+    }
+
+    .content-main-step2-dropdown-list
+    {
+      display: none;
+      text-align: center;
+      width: 85px;
+      height: 195px;
+      border: 1px solid $color-font;
+      background: $color-background-alt;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      z-index: 2;
+      color: $color-font;
+      line-height: 2rem;
+
+      li
+      {
+        margin: 7px;
+
+        input
+        {
+          display: none;
+        }
+
+        input + label span
+        {
+          cursor: pointer;
+          display: inline-block;
+          width: 100%;
+          border: 1px solid transparent;
+
+          &:hover
+          {
+            border: 1px solid $color-contrast;
+          }
+        }
+
+        &:hover
+        {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .visible-dropdown-list
+    {
+      display: block;
+    }
   }
 
-  select::-ms-expand {
-    display: none;
-  }
 
-  select:focus
-  {
-    background: none;
-  }
-
-  i
-  {
-    position: absolute;
-    right: 30px;
-    z-index: 1;
-  }
 
 }
