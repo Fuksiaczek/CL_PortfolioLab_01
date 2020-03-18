@@ -53,7 +53,7 @@ class FourStepsPanel extends Component
             this.setState({
                 step3: stepValue,
                 currentStep: this.state.currentStep + 1,
-                yellowBarInfo: "Podaj adres oraz termin odbioru rzeczy."
+                yellowBarInfo: "Podaj adres oraz termin odbioru rzeczy. Pola oznaczone * są obowiązkowe."
             })
         }
 

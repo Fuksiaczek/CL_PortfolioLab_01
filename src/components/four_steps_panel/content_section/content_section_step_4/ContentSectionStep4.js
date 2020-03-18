@@ -15,8 +15,28 @@ class ContentSectionStep3 extends Component
                 time: "",
                 info: "",
             },
-            disabled: false,
+            disabled: true,
+            infoInvalid: false
         };
+
+    validationChecked = () =>
+    {
+        const {street, city, postcode, phone, date, time} = this.state.checked;
+        const {infoInvalid} = this.state;
+
+        if(street && city && postcode && phone && date && time && !infoInvalid)
+        {
+            this.setState({
+                disabled: false,
+            });
+        }
+        else
+        {
+            this.setState({
+                disabled: true,
+            });
+        }
+    };
 
     handleChangeStreet = (e) =>
     {
@@ -31,11 +51,11 @@ class ContentSectionStep3 extends Component
                 info: this.state.checked.info,
             },
         });
+        this.validationChecked();
     };
 
     handleChangeCity = (e) =>
     {
-
         this.setState({
             checked:
                 {
@@ -48,7 +68,7 @@ class ContentSectionStep3 extends Component
                     info: this.state.checked.info,
                 },
         });
-
+        this.validationChecked();
     };
 
     handleChangePostcode = (e) =>
@@ -65,6 +85,7 @@ class ContentSectionStep3 extends Component
                     info: this.state.checked.info,
                 },
         });
+        this.validationChecked();
     };
 
     handleChangePhone = (e) =>
@@ -81,6 +102,7 @@ class ContentSectionStep3 extends Component
                     info: this.state.checked.info,
                 },
         });
+        this.validationChecked();
     };
 
     handleChangeDate = (e) =>
@@ -97,6 +119,7 @@ class ContentSectionStep3 extends Component
                     info: this.state.checked.info,
                 },
         });
+        this.validationChecked();
     };
 
     handleChangeTime = (e) =>
@@ -112,8 +135,8 @@ class ContentSectionStep3 extends Component
                     city: this.state.checked.city,
                     info: this.state.checked.info,
                 },
-            disabled: false,
         });
+        this.validationChecked();
     };
 
     handleChangeInfo = (e) =>
@@ -121,7 +144,7 @@ class ContentSectionStep3 extends Component
         if(e.currentTarget.value.length > 100)
         {
             this.setState({
-                disabled: true,
+                infoInvalid: true,
             });
         }
         else
@@ -137,17 +160,17 @@ class ContentSectionStep3 extends Component
                         time: this.state.checked.time,
                         city: this.state.checked.city,
                     },
-                disabled: false,
+                infoInvalid: false,
             });
         }
-
+        this.validationChecked();
     };
 
 
     render() {
         const {street, city, postcode, phone,
             date, time, info,
-            checked, disabled} = this.state;
+            checked, disabled, infoInvalid} = this.state;
         return (
             <>
                 <section className="section-four-steps-content">
@@ -164,45 +187,49 @@ class ContentSectionStep3 extends Component
                                     <form className="content-main-step4-forms-form">
                                         <legend><h3>Adres odbioru:</h3></legend>
                                         <label>
-                                            <h3>Ulica</h3>
+                                            <h3>Ulica*</h3>
                                             <input type="text"
                                                    name="street"
                                                    value={street}
-                                                   onChange={this.handleChangeStreet}/>
+                                                   onInput={this.handleChangeStreet}
+                                                   onKeyUp={this.validationChecked}/>
                                         </label>
                                         <label>
-                                            <h3>Miasto</h3>
+                                            <h3>Miasto*</h3>
                                             <input type="text"
                                                    name="city"
                                                    value={city}
-                                                   onChange={this.handleChangeCity}/>
+                                                   onInput={this.handleChangeCity}
+                                                   onKeyUp={this.validationChecked}/>
                                         </label>
                                         <label>
-                                            <h3>Kod pocztowy</h3>
+                                            <h3>Kod pocztowy*</h3>
                                             <input type="text"
                                                    name="postcode"
                                                    value={postcode}
-                                                   onChange={this.handleChangePostcode}/>
+                                                   onChange={this.handleChangePostcode}
+                                                   onKeyUp={this.validationChecked}/>
                                         </label>
                                         <label>
-                                            <h3>Numer telefonu</h3>
+                                            <h3>Numer telefonu*</h3>
                                             <input type="text"
                                                    name="phone"
                                                    value={phone}
-                                                   onChange={this.handleChangePhone}/>
+                                                   onChange={this.handleChangePhone}
+                                                   onKeyUp={this.validationChecked}/>
                                         </label>
                                     </form>
                                     <form className="content-main-step4-forms-form">
                                         <legend><h3>Termin odbioru:</h3></legend>
                                         <label>
-                                            <h3>Data</h3>
+                                            <h3>Data*</h3>
                                             <input type="date"
                                                    name="date"
                                                    value={date}
                                                    onChange={this.handleChangeDate}/>
                                         </label>
                                         <label>
-                                            <h3>Godzina</h3>
+                                            <h3>Godzina*</h3>
                                             <input type="time"
                                                    name="time"
                                                    value={time}
@@ -213,12 +240,13 @@ class ContentSectionStep3 extends Component
                                             <textarea
                                                 name="info"
                                                 value={info}
-                                                onChange={this.handleChangeInfo}/>
+                                                onChange={this.handleChangeInfo}
+                                                onKeyUp={this.validationChecked}/>
                                         </label>
                                     </form>
                                 </div>
-                                <div className="content-main-step4-forms-info">
-                                    {disabled && <h4>wiadomość może mieć maksymalnie 100 znaków</h4>}
+                                <div className="content-main-step4-error">
+                                    {infoInvalid && <h4>Wiadomość może mieć maksymalnie 100 znaków!</h4>}
                                 </div>
                             </div>
                             <div className="content-btns">

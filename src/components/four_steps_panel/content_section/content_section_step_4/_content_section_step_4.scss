@@ -3,17 +3,19 @@
 
 //step 4
 
+.content-main-step4-error
+{
+  width: 100%;
+  padding: 20px 0;
+  color: $color-error;
+}
+
 .content-main-step4-forms
 {
   width: 83%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  .content-main-step4-forms-info
-  {
-    width: 100%;
-  }
 
   .content-main-step4-forms-form
   {
