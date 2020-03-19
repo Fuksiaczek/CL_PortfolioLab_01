@@ -16,7 +16,7 @@ class FourStepsPanelMainSection extends Component
                             <div className="main-background"/>
                             <div className="main-info">
                                 <div className="main-info-text">
-                                    <h2>Oddaj rzeczy, których juz nie chcesz</h2>
+                                    <h2>Oddaj rzeczy, których już nie chcesz</h2>
                                     <h2>POTRZEBUJĄCYM</h2>
                                 </div>
                                 <Decorator/>

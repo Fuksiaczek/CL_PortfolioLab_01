@@ -46,9 +46,8 @@ a{
   text-decoration: none;
 }
 
-textarea:focus, input:focus
+textarea:focus, input:focus, button:focus
 {
   outline-offset: 0;
   outline: none;
 }
-

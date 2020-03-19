@@ -12,6 +12,8 @@ An application that helps users give their old things back into good hands like 
 - React
 - React Router
 - React Scroll
+- jQuery
+- Git branches
 
 ### Installation:
 
